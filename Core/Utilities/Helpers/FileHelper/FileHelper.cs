@@ -32,10 +32,7 @@ namespace Core.Utilities.Helpers.FileHelper
         /// <returns></returns>
         public static string Update(IFormFile file, string filePath, string root)
         {
-            if (File.Exists(filePath))
-            {
-                File.Delete(filePath);
-            }
+            Delete(filePath);
 
             return Upload(file, root);
         }

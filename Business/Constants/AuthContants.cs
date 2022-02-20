@@ -15,7 +15,7 @@ namespace Business.Constants
         public static string UserNotFound = "Kullanıcı bulunamadı.";
         public static string PasswordError = "Girdiğiniz şifre hatalı.";
         public static string SuccessfulLogin = "Giriş başarı ile tamamlandı.";
-        public static string AccessTokenCreated = "Jwt token başarı ile oluşturuldu";
+        public static string AccessTokenCreated = "Giriş başarılı";
         public static string VerifyYourEmailAddress = "Lütfen mail adresinizi onaylayın";
     }
 }

@@ -55,9 +55,9 @@ namespace Business.Concrete
             return new SuccessDataResult<CarDetailDto>(_carDal.GetCarsDetails(c=>c.Id==id).FirstOrDefault());
         }
 
-        [ValidationAspect(typeof(CarValidator))]
-        [SecuredOperation("admin,moderator")]
-        [CacheRemoveAspect("ICarService.Get")]
+        //[ValidationAspect(typeof(CarValidator))]
+        //[SecuredOperation("admin,moderator")]
+        //[CacheRemoveAspect("ICarService.Get")]
 
         public IResult Add(Car car)
         {
