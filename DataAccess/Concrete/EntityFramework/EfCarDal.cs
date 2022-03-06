@@ -9,6 +9,7 @@ using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace DataAccess.Concrete.EntityFramework
 {
@@ -32,8 +33,9 @@ namespace DataAccess.Concrete.EntityFramework
                                  ColorName = co.Name,
                                  DailyPrice = c.DailyPrice,
                                  Description = c.Description,
-                                 Images = (from image in context.CarImages where c.Id == image.CarId select new CarImageDetailDto {ImagePath = image.ImagePath}  ).ToList()
-                             };
+                                 Images =  (from image in context.CarImages where c.Id == image.CarId  select new CarImageDetailDto { ImagePath = image.ImagePath }).ToList()
+                    };
+             
 
                 return filter == null ? result.ToList() : result.Where(filter).ToList();
             }
